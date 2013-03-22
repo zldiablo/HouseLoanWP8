@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="zh-CN" />
-  <App xmlns="" ProductID="{f008c776-bad3-4073-aff0-8a8beddcb54f}" Title="房贷计算器2013" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Le Zhang" Description="根据最新利率计算中国住房贷款，提供公积金和商业贷款两种贷款方式，等额本金和等额本息两种还款方式" Publisher="Le Zhang" PublisherID="{3c2c9d29-dffc-4e40-b4e0-60b36e5075d3}">
+  <Languages xmlns="">
+    <Language code="zh-Hans" />
+    <Language code="zh-CHS" />
+    <Language code="zh-CN" />
+    <Language code="zh-SG" />
+  </Languages>
+  <App xmlns="" ProductID="{f008c776-bad3-4073-aff0-8a8beddcb54f}" Title="房贷计算器2013" RuntimeType="Silverlight" Version="1.0.0.1" Genre="apps.normal" Author="Le Zhang" Description="根据最新利率计算中国住房贷款，提供公积金和商业贷款两种贷款方式，等额本金和等额本息两种还款方式" Publisher="Le Zhang" PublisherID="{3c2c9d29-dffc-4e40-b4e0-60b36e5075d3}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
@@ -16,7 +22,7 @@
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>HouseLoadWP8</Title>
+          <Title>房贷计算器2013</Title>
           <BackContent>
           </BackContent>
           <BackBackgroundImageURI>

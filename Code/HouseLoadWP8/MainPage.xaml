@@ -69,7 +69,7 @@
         </StackPanel>
         <ScrollViewer Grid.Row="1">
             <StackPanel x:Name="ContentPanel" Margin="0,0,0,100">
-
+                <StackPanel x:Name="AmountMessagePanel" Orientation="Horizontal">
                 <TextBlock Text="贷款金额(万元)" 
                        FontFamily="{StaticResource PhoneFontFamilySemiBold}"
                        FontSize="{StaticResource PhoneFontSizeMedium}"
@@ -77,7 +77,15 @@
                        Margin="12,12,12,12"
                        >
                 </TextBlock>
-                <TextBox Name="LoanAmount" InputScope="Number" MaxLength="6" Text="100" AcceptsReturn="True" />
+                <TextBlock Name="AmountInputWarning" Text="" 
+                       FontFamily="{StaticResource PhoneFontFamilySemiBold}"
+                       FontSize="{StaticResource PhoneFontSizeMedium}"
+                       Foreground="{StaticResource PhoneAccentBrush}"
+                       Margin="12,12,12,12"
+                       >
+                </TextBlock>
+                </StackPanel>
+                <TextBox Name="LoanAmount" InputScope="Number" MaxLength="6" Text="80" AcceptsReturn="True" MinHeight="1" TextChanged="LoanAmount_TextChanged" />
 
                 <toolkit:ListPicker Header="贷款类型" Name="LoanType">
                     <sys:String>公积金</sys:String>

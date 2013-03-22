@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using Microsoft.Phone.Controls;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using HouseLoadWP8.Resources;
 
 namespace HouseLoadWP8
 {
@@ -34,6 +28,10 @@ namespace HouseLoadWP8
         private void CalculateButton_Click(object sender, RoutedEventArgs e)
         {
             string loanAmount = LoanAmount.Text;
+            if (string.IsNullOrWhiteSpace(loanAmount))
+            {
+                return;
+            }
             int loanType = LoanType.SelectedIndex;
             string loanMonths = LoanTime.SelectedItem.ToString();
 
@@ -48,6 +46,20 @@ namespace HouseLoadWP8
 
             Uri resultPageUri = new Uri(string.Format(url, loanAmount, loanType, loanMonths, interestChange[interestChangeSelect], payType), UriKind.Relative);
             frame.Navigate(resultPageUri);
+        }
+
+        private void LoanAmount_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string loanAmount = LoanAmount.Text;
+            int res;
+            if (!int.TryParse(loanAmount, out res))
+            {
+                AmountInputWarning.Text = "请输入合法数字";
+            }
+            else
+            {
+                AmountInputWarning.Text = string.Empty;
+            }
         }
 
         // 用于生成本地化 ApplicationBar 的示例代码
